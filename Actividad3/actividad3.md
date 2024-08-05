@@ -71,9 +71,9 @@ sudo chmod 755 /home/usuario1
 
 ``` bash 
 su - usuario1
-echo "Contenido del archivo1" > archivo1.txt
+echo "Contenido" > archivo.txt
 mkdir directorio1
-echo "Contenido del archivo2" > directorio1/archivo2.txt
+echo "Contenido" > directorio1/archivo2.txt
 exit
 
 ```
@@ -85,11 +85,34 @@ ls -ld directorio1
 
 ![Membresia](Imagenes/Permisos.png)
 
-### Modificar permisos
+### Modificar permisos usando chmod con modo numerico
 ``` bash 
-ls -l archivo1.txt
-ls -ld directorio1
+sudo chmod 640 /home/usuario1/archivo.txt
 ```
+
+### Modificar permisos usando modo simbolico
+
+``` bash 
+sudo chown :grupo1 /home/usuario1/directorio1/archivo2.txt
+```
+
+### Confirmar permisos de directorio
+``` bash 
+chmod 740 /home/usuario1/directorio1
+```
+
+### Comprobacion de acceso
+
+``` bash 
+su - usuario2
+cat /home/usuario1/archivo.txt 
+cat /home/usuario1/directorio1/archivo2.txt
+exit
+```
+![acceso0](Imagenes/Acesso.png)
+
+### Verificacion final
+![acceso0](Imagenes/Final.png)
 
 
 
